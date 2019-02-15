@@ -94,10 +94,23 @@ sepiaFilter.addEventListener('change',function(e){
             y:e.clientY - rect.top
         };
     }
+    document.getElementById('colors').addEventListener('change', changeColor);
+    function changeColor(){
+        var color = document.getElementById('colors').value;
+        return color;
+    }
     function paint(canvas, posx, posy){
         var context = canvas.getContext('2d');
         if(md){
-            context.fillRect(posx, posy, 5, 5);
+            var radius = 5;
+            var startAngle = 1.3 * Math.PI;
+            var endAngle =1.29 * Math.PI;
+            var counterClockwise = false;
+            context.beginPath();
+            context.arc(posx, posy, radius, startAngle, endAngle, counterClockwise);
+            context.lineWidth = 30;
+            context.fillStyle = changeColor();
+            context.fill();
         }
     }
     

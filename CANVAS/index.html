@@ -10,8 +10,8 @@
 </head>
 <body>
     <div id="img">
-        <canvas id="canvas"></canvas>
-        <input type="file" id="addImage" name="addImage">
+        <canvas id="canvas" width="1500" height="600"></canvas>
+        <input type="file" id="addImage" name="addImage" >
         <div class="rangeInputs">
             <div class="rangeInput">
                 <p>Jasność/Brightness</p>
@@ -34,6 +34,11 @@
                                     <input type="range" min="0" max="10" id="blur" value="0" step="10"></input>
                                 </div>    
         </div>
+        <select id="colors">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+          </select>
     </div>
     <script src="app.js"></script>
 </body>
