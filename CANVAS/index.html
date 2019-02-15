@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <title>CANVAS</title>
+</head>
+<body>
+    <div id="img">
+        <canvas id="canvas"></canvas>
+        <input type="file" id="addImage" name="addImage">
+        <div class="rangeInputs">
+            <div class="rangeInput">
+                <p>Jasność/Brightness</p>
+                <input type="range" min="-100" max="100" id="brightness" step="1"></input>
+            </div>
+            <div class="rangeInput">
+                    <p>Kontrast/Contrast</p>
+                    <input type="range" min="-100" max="100" id="contrast" step="1"></input>
+                </div>
+                <div class="rangeInput">
+                        <p>Ostrość/Sharpness</p>
+                        <input type="range" min="-100" max="100" id="sharpness" step="1"></input>
+                    </div>
+                    <div class="rangeInput">
+                            <p>Sepia</p>
+                            <input type="range" min="-100" max="100" id="sepia" step="1"></input>
+                        </div>
+                        <div class="rangeInput">
+                                <p>Nasycenie/Saturation</p>
+                                <input type="range" min="-100" max="100" id="saturation" step="1"></input>
+                            </div>
+                            <div class="rangeInput">
+                                    <p>Rozmycie/Blur</p>
+                                    <input type="range" min="-100" max="100" id="blur" step="1"></input>
+                                </div>    
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
