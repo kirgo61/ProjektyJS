@@ -1,6 +1,6 @@
 {
 document.addEventListener('keydown', function(e){
-    if(e.keyCode==81 || e.which==81){play(0);}
+    if(e.keyCode==81){play(0);}
     if(e.keyCode==87){play(1);}
     if(e.keyCode==69){play(2);};
     if(e.keyCode==82){play(3);}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Notes</title>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <form class="notes-Input" id="notesInput">
+                    <div class="notesForm">
+                        <label class="notesFormLabel" for="notesMessage">Put here your note!</label>
+                        <textarea class="notesText" name="notesText" id="notesText"></textarea>
+                    </div>
+                    <div class="notesForm">
+                        <button type="submit" class="button notesButton">Add</button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <section class="notesList">
+                        <div class="notesListH">
+                            <h2 class="notesListTitle">
+                                Notes list + search...
+                            </h2>
+                            <form class="notesListSearch">
+                                <input type="search" id="notesSearch" class="notesList_Search">
+                            </form>
+                        </div>
+                    
+                        <div class="notesLists" id="notesLists">
+                            <!-- tutaj trafią zadania -->
+                        </div>
+                    </section>
+                    <div class="notesEl">
+                            <div class="notesElBar">
+                                <h3 class="notesElDate"></h3>
+                                <button class="notesElDelete" title="Remove">
+                                    
+                                </button>
+                            </div>
+                            <div class="notesElText">
+                                
+                            </div>
+                        </div>
+
+    </div>
+    <script src="app.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+</body>
+</html>
