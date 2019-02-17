@@ -12,7 +12,6 @@
                 //belka gorna
                 var notesBar = document.createElement('div');
                 notesBar.classList.add('notesElBar');
-                //data w belce
                 var notesDate = document.createElement('div');
                 notesDate.classList.add('notesElBar');
                 var date = new Date();
@@ -36,7 +35,6 @@
                 //i wrzucamy do listy
                 notesList.append(notes);
             }
-
             document.addEventListener('DOMContentLoaded', function() {
                 notesList = document.querySelector('#notesLists');
                 notesForm = document.querySelector('#notesInput');
@@ -49,7 +47,6 @@
                         textarea.value = '';
                     }
                 });
-
                 notesSearch.addEventListener('input', function() {
                     var val = this.value;
                     var elems = notesList.querySelectorAll('.notesEl');
@@ -63,7 +60,6 @@
                         }
                     });
                 });
-
                 notesList.addEventListener('click', function(e) {
                     if (e.target.closest('.notesElDelete') !== null) {
                         e.target.closest('.notesEl').remove();
