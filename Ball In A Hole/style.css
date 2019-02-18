@@ -1,0 +1,43 @@
+body{
+    background: url('trawa.jpg');
+  }
+  #kulka {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-image: radial-gradient(circle, grey, gray, silver);
+      position: absolute;
+      top: 50%;
+      right: 45%;
+    }
+    .container{
+        overflow: hidden;
+    }
+    .container button{
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      width: 200px;
+      height: 150px;
+      font-size: 3em;
+      border: 2px solid salmon;
+      border-radius: 50%;
+      background-color: blanchedalmond;
+    }
+    .gap, .goodGap, .tmpGap{
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      z-index: -2;
+      position: absolute;
+    }
+    .goodGap{
+      background-image: radial-gradient(circle, green,rgb(0, 192, 0),rgb(0, 255, 0));
+      z-index: -1;
+    }
+    .gap{
+      background-image: radial-gradient(circle, red, orange, yellow);
+    }
+    .tmpGap{
+      background: #89be20;
+    }
