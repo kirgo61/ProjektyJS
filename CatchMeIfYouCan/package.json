@@ -1,0 +1,16 @@
+{
+  "name": "catchmeifyoucan",
+  "version": "1.0.0",
+  "description": "projektNr5",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DamianHerbut",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "*",
+    "socket.io": "2.2.0"
+  }
+}

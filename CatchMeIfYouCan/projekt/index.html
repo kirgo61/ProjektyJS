@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CatchMeIfYouCan</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div id="container">
+    <section id="maps">
+        <div id="map"></div>
+    </section>
+    <section id="messenger">
+        <form id="communicator">
+            <input id="nick" type="text" name="person" placeholder="Twoje imie">
+            <input id="mes" type="text" name="message" placeholder="Twoja wiadomość">
+            <button type="submit">Wyślij wiadomość</button>
+        </form>
+        <div id="sendedMessages"></div>
+    </section>
+    </div>   
+    <script src="app.js"></script>   
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM9bys8PmkZHo8f6Z8jgBrxLiZ75Crl7Y"></script>
+</body>
+</html>
