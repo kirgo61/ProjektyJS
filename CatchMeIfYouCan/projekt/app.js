@@ -1,3 +1,7 @@
+//aby uruchomic program należy uruchomić serwer za pomocą komendy "node server.js" w konsoli node i później w przegladarce wpisać "localhost:3000", chat działa, choć jest kapryśny 
+
+//////////////////////////////////////////
+
 //sprawdzenie czy przeglądarka obsługuje geolocation, jeżeli tak to zostaje wywołana funkcja googleMap, jeżeli nie to mamy brak wsparcia 
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(GoogleMap, err);

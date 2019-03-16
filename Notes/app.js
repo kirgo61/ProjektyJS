@@ -1,69 +1,50 @@
-
-            var notesList = null;
-            var notesForm = null;
-            var notesSearch = null;
-            var i = 1;
-            function addTask(text) {
-                localStorage.setItem('Note' + [i],text);
-                i++;
-                //element note
-                var notes = document.createElement('div');
-                notes.classList.add('notesEl');
-                //belka gorna
-                var notesBar = document.createElement('div');
-                notesBar.classList.add('notesElBar');
-                var notesDate = document.createElement('div');
-                notesDate.classList.add('notesElBar');
-                var date = new Date();
-                var dateText = date.getDate() + '-' + (date.getMonth()+1) + '-' + date.getFullYear() + ' godz.: ' + date.getHours() + ':' + date.getMinutes();
-                notesDate.innerText = dateText;
-                //przycisk usuwania
-                var notesDelete = document.createElement('button');
-                notesDelete.classList.add('notesElDelete');
-                notesDelete.classList.add('button');
-                notesDelete.innerHTML = '<i class="fas fa-times-circle"></i>';
-                //wrzucamy elementy do belki
-                notesBar.appendChild(notesDate);
-                notesBar.appendChild(notesDelete);
-                //element z tekstem
-                var notesText = document.createElement('div');
-                notesText.classList.add('notesElText');
-                notesText.innerText = text;
-                //laczymy calosc
-                notes.appendChild(notesBar);
-                notes.appendChild(notesText);
-                //i wrzucamy do listy
-                notesList.append(notes);
+  //notepocket, możliwość edytowania tylko ostatnio dodanej notatki
+{
+    var i = 0; //id notatek
+    
+    
+    document.querySelector('#not').addEventListener('submit',(e)=>{
+        e.preventDefault();
+        let title = document.querySelector(`input[name="title"]`).value
+        let text = document.querySelector(`input[name="text"]`).value
+        //aktualna data
+        let date = new Date();
+        let dateText = date.getDate() + '-' + (date.getMonth()+1) + '-' + date.getFullYear() + ' godz.: ' + date.getHours() + ':' + date.getMinutes();
+        function addNote(note){
+            document.querySelector('#sendedNotes').innerHTML += '<div id="n'+i+'">'+'Title: '+note.title+ '<br/>' +'Text: ' + note.text +'<br/>'+ 'Date: ' +dateText +'<br/>'+'<select id="color'+i+'"><option value = "green">Green</option><option value = "blue">Blue</option><option value = "red">Red</option></select>'+'<button class="x'+i+'">Remove</button>' +'</div>';
+            var wid = document.querySelector('#n'+i);
+            // style notatek
+            wid.style.borderRadius = "10px";
+            wid.style.fontSize = "40px";
+            wid.style.marginBottom = "10px";
+            wid.style.background = "green";
+            ++i;
+            //zmiana koloru
+            document.getElementById('color'+(i-1)).addEventListener('change', changeColor);
+            function changeColor(){
+                var color = document.getElementById('color'+(i-1)).value;
+                wid.style.background = color;
+                
             }
-            document.addEventListener('DOMContentLoaded', function() {
-                notesList = document.querySelector('#notesLists');
-                notesForm = document.querySelector('#notesInput');
-                notesSearch = document.querySelector('#notesSearch');
-                notesForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    var textarea = this.querySelector('textarea');
-                    if (textarea.value !== '') {
-                        addTask(textarea.value);
-                        textarea.value = '';
-                    }
-                });
-                notesSearch.addEventListener('input', function() {
-                    var val = this.value;
-                    var elems = notesList.querySelectorAll('.notesEl');
-                    [].forEach.call(elems, function(el) {
-                        var text = el.querySelector('.notesElText').innerText;
-                        if (text.indexOf(val) !== -1) {
-                            //znaleziono text, pokaz
-                            el.style.setProperty('display', '');
-                        } else {
-                            el.style.setProperty('display', 'none');
-                        }
-                    });
-                });
-                notesList.addEventListener('click', function(e) {
-                    if (e.target.closest('.notesElDelete') !== null) {
-                        e.target.closest('.notesEl').remove();
-                    }
-                });
+            //usunięcie notatki
+            document.querySelector('.x'+(i-1)).addEventListener('click', function(){
+                document.querySelector('#n'+(i-1)).outerHTML = "";
             });
-        
+            
+            
+        }
+        //sprawdzenie czy jest tekst w tytule jak i w treści
+        if(title.length&&text.length){
+            let noteObj = {
+                title:title,
+                text:text,
+            };
+            //dodanie notatki do localstorage
+            localStorage.setItem('Notatka'+[i], JSON.stringify(noteObj));
+            //dodanie notatki
+            addNote(noteObj);
+        }
+    });
+    }
+    
+    
