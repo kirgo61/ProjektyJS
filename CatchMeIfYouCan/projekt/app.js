@@ -14,6 +14,8 @@ function err() {
 //funkcja googlemap ma za zadanie wyświetlić mape z poprawną lokalizacją wraz z markerem
 function GoogleMap(position) {
     var map = new google.maps.Map(document.getElementById('map'), {
+        tmpLat:position.coords.latitude,
+        tmpLng:position.coords.longitude,
       zoom: 12,
       center:{lat:position.coords.latitude, lng:position.coords.longitude} 
     });
@@ -22,6 +24,13 @@ function GoogleMap(position) {
         position: map.center,
         animation: google.maps.Animation.DROP,
         title: "Położenie"
+      });
+      document.addEventListener('keydown',(e)=>{
+          if(e.keyCode==37){map.tmpLng-=0.001;console.log("dziala");}
+          if(e.keyCode==38){map.tmpLat+=0.001;}
+          if(e.keyCode==39){map.tmpLng+=0.001;}
+          if(e.keyCode==40){map.tmpLat-=0.001;}
+          marker.setPosition({lat:map.tmpLat, lng:map.tmpLng});
       });
   } 
 /////////////////////////////////////////////////////
