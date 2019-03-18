@@ -21,6 +21,7 @@ function gyroMove(e) {
     var y = e.gamma;
     var ballPosiiton = ball.getBoundingClientRect();
     // console.log(Math.floor(ballPosiiton.top),Math.floor(ballPosiiton.bottom),Math.floor(ballPosiiton.left),Math.floor(ballPosiiton.right));
+    //obie funkcje sprawdzają czy gracz przegrał bądź wygrał po pozycji kulki względem dziury, w tym celu zostały pobrane 4 koordynaty(top,bottom,left,right) za pomocą funkcji getBoundingClientRect()
     function checkWin(e){
         if( ((Math.floor(ballPosiiton.left) <=e.left+30)&&(Math.floor(ballPosiiton.left) >=e.left-30))  &&  ((Math.floor(ballPosiiton.top) <=e.top+30)&&(Math.floor(ballPosiiton.top) >=e.top-30))  &&  ((Math.floor(ballPosiiton.bottom) <=e.bottom+30)&&(Math.floor(ballPosiiton.bottom) >=e.bottom-30))  &&  ((Math.floor(ballPosiiton.right) <=e.right+30)&&(Math.floor(ballPosiiton.right) >=e.right-30))){
             alert('Wygrałeś, odśwież stronę!');
