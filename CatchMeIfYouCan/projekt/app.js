@@ -1,4 +1,4 @@
-//aby uruchomic program należy uruchomić serwer za pomocą komendy "node server.js" w konsoli node i później w przegladarce wpisać "localhost:3000", chat działa, choć jest kapryśny 
+//aby uruchomic program należy uruchomić serwer za pomocą komendy "node server.js" w konsoli node i później w przegladarce wpisać "localhost:3000",jeżeli mapa się nie załaduje to proszę odświeżyć stronę, chat działa, choć jest kapryśny 
 
 //////////////////////////////////////////
 
@@ -14,8 +14,8 @@ function err() {
 //funkcja googlemap ma za zadanie wyświetlić mape z poprawną lokalizacją wraz z markerem
 function GoogleMap(position) {
     var map = new google.maps.Map(document.getElementById('map'), {
-        tmpLat:position.coords.latitude,
-        tmpLng:position.coords.longitude,
+      tmpLat:position.coords.latitude,
+      tmpLng:position.coords.longitude,
       zoom: 12,
       center:{lat:position.coords.latitude, lng:position.coords.longitude} 
     });
